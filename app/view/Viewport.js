@@ -7,7 +7,7 @@ Ext.define('ExtSample.view.Viewport', {
 	},
 	initComponent: function() {
 		this.items =
-			[{
+			[/*{
 			xtype: 'panel',
 			width: 260,
 			title: 'Puzzle',
@@ -38,6 +38,8 @@ Ext.define('ExtSample.view.Viewport', {
 					action : 'shufflePuzzle'
 				}]
 			}]
+		}*/{
+			xtype : 'chessboard'
 		}];
 		this.callParent();
 	}
