@@ -25,6 +25,7 @@ Ext.define('ExtSample.view.Chessboard', {
 					piece = Ext.create('Ext.panel.Panel', {
 						height: 80,
 						width: 80,
+						border: 0,
 						x: a,
 						y: b,
 						bodyStyle: {
@@ -35,6 +36,7 @@ Ext.define('ExtSample.view.Chessboard', {
 					piece = Ext.create('Ext.panel.Panel', {
 						height: 80,
 						width: 80,
+						border: 0,
 						x: a,
 						y: b,
 						bodyStyle: {
@@ -47,6 +49,7 @@ Ext.define('ExtSample.view.Chessboard', {
 					piece = Ext.create('Ext.panel.Panel', {
 						height: 80,
 						width: 80,
+						border: 0,
 						x: a,
 						y: b,
 						bodyStyle: {
@@ -57,6 +60,7 @@ Ext.define('ExtSample.view.Chessboard', {
 					piece = Ext.create('Ext.panel.Panel', {
 						height: 80,
 						width: 80,
+						border: 0,
 						x: a,
 						y: b,
 						bodyStyle: {
@@ -144,22 +148,22 @@ Ext.define('ExtSample.view.Chessboard', {
 						width: 70
 					});
 				} else if (i == 61 || i == 58) {
-					soldier =Ext.create('Ext.Img', {
+					soldier = Ext.create('Ext.Img', {
 						src: './images/blackKnight.png',
-						height : 70,
-						width : 70
+						height: 70,
+						width: 70
 					});
 				} else if (i == 59) {
 					soldier = Ext.create('Ext.Img', {
 						src: './images/blackQueen.png',
-						height : 70,
-						width : 70
+						height: 70,
+						width: 70
 					});
 				} else {
 					soldier = Ext.create('Ext.Img', {
 						src: './images/blackKing.png',
-						height : 70,
-						width : 70
+						height: 70,
+						width: 70
 					});
 				}
 			}
