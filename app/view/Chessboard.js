@@ -13,7 +13,15 @@ Ext.define('ExtSample.view.Chessboard', {
 		var chessBoardPieces = 64;
 		var pieces = [];
 		var flag = true;
+		var x_index;
+		var y_index = 0;
 		for (var i = 0; i < chessBoardPieces; i++) {
+			if (x_index) {
+				x_index = String.fromCharCode(x_index.charCodeAt() + 1);
+			} else {
+				x_index = 'a';
+			}
+			y_index = parseInt(y_index/8) + 1;
 			var piece;
 			var a = (i % 8) * 80;
 			var b = parseInt(i / 8) * 80;
@@ -26,6 +34,8 @@ Ext.define('ExtSample.view.Chessboard', {
 						height: 80,
 						width: 80,
 						border: 0,
+						itemId: (x_index + y_index),
+						type: 'pieceHolder',
 						x: a,
 						y: b,
 						bodyStyle: {
@@ -37,6 +47,8 @@ Ext.define('ExtSample.view.Chessboard', {
 						height: 80,
 						width: 80,
 						border: 0,
+						itemId: (x_index + y_index),
+						type: 'pieceHolder',
 						x: a,
 						y: b,
 						bodyStyle: {
@@ -50,6 +62,8 @@ Ext.define('ExtSample.view.Chessboard', {
 						height: 80,
 						width: 80,
 						border: 0,
+						itemId: (x_index + y_index),
+						type: 'pieceHolder',
 						x: a,
 						y: b,
 						bodyStyle: {
@@ -61,6 +75,8 @@ Ext.define('ExtSample.view.Chessboard', {
 						height: 80,
 						width: 80,
 						border: 0,
+						itemId: (x_index + y_index),
+						type: 'pieceHolder',
 						x: a,
 						y: b,
 						bodyStyle: {
@@ -90,81 +106,45 @@ Ext.define('ExtSample.view.Chessboard', {
 			var piece = pieces[i];
 			if (i < 8) {
 				if (i == 7 || i == 0) {
-					soldier = Ext.create('Ext.Img', {
-						src: './images/whiteRook.png',
-						height: 70,
-						width: 70
-					});
+					soldier = this.fnCreatePiece('whiteRook');
+					
 
-				} else if (i == 6 || i == 1) {
-					soldier = Ext.create('Ext.Img', {
-						src: './images/whiteBishop.png',
-						height: 70,
-						width: 70
-					});
 				} else if (i == 5 || i == 2) {
-					soldier = Ext.create('Ext.Img', {
-						src: './images/whiteKnight.png',
-						height: 70,
-						width: 70
-					});
+					soldier = this.fnCreatePiece('whiteBishop');
+					
+				} else if (i == 6 || i == 1) {
+					soldier = this.fnCreatePiece('whiteKnight');
+					
 				} else if (i == 4) {
-					soldier = Ext.create('Ext.Img', {
-						src: './images/whiteQueen.png',
-						height: 70,
-						width: 70
-					});
+					soldier = this.fnCreatePiece('whiteQueen');
+					
 				} else {
-					soldier = Ext.create('Ext.Img', {
-						src: './images/whiteKing.png',
-						height: 70,
-						width: 70
-					});
+					soldier = this.fnCreatePiece('whiteKing');
+					
 				}
 			} else if (i >= 8 && i < 16) {
-				soldier = Ext.create('Ext.Img', {
-					src: './images/whitePawn.png',
-					height: 70,
-					width: 70
-				});
+				soldier = this.fnCreatePiece('whitePawn');
+				
 			} else if (i >= 48 && i < 56) {
-				soldier = Ext.create('Ext.Img', {
-					src: './images/blackPawn.png',
-					height: 70,
-					width: 70
-				});
+				soldier = this.fnCreatePiece('blackPawn');
+				
 			} else if (i >= 56 && i < 64) {
 				if (i == 63 || i == 56) {
-					soldier = Ext.create('Ext.Img', {
-						src: './images/blackRook.png',
-						height: 70,
-						width: 70
-					});
+					soldier = this.fnCreatePiece('blackRook');
+					
 
-				} else if (i == 62 || i == 57) {
-					soldier = Ext.create('Ext.Img', {
-						src: './images/blackBishop.png',
-						height: 70,
-						width: 70
-					});
 				} else if (i == 61 || i == 58) {
-					soldier = Ext.create('Ext.Img', {
-						src: './images/blackKnight.png',
-						height: 70,
-						width: 70
-					});
+					soldier = this.fnCreatePiece('blackBishop');
+					
+				} else if (i == 62 || i == 57) {
+					soldier = this.fnCreatePiece('blackKnight');
+
 				} else if (i == 59) {
-					soldier = Ext.create('Ext.Img', {
-						src: './images/blackQueen.png',
-						height: 70,
-						width: 70
-					});
+					soldier = this.fnCreatePiece('blackQueen');
+
 				} else {
-					soldier = Ext.create('Ext.Img', {
-						src: './images/blackKing.png',
-						height: 70,
-						width: 70
-					});
+					soldier = this.fnCreatePiece('blackKing');
+
 				}
 			}
 			if (soldier)
@@ -173,5 +153,13 @@ Ext.define('ExtSample.view.Chessboard', {
 		};
 		this.items = pieces;
 		this.callParent();
+	},
+	fnCreatePiece: function(type) {
+		var soldier = Ext.create('Ext.Img', {
+			src: './images/' + type + '.png',
+			height: 70,
+			width: 70
+		});
+		return soldier;
 	}
 });
