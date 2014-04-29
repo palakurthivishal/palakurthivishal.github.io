@@ -13,6 +13,8 @@ Ext.define('ExtSample.controller.ChessboardController', {
 	isSelect: false,
 	init: function() {
 		var me = this;
+		this.alphas = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+		this.numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 		this.control({
 			'chessboard panel[type=pieceHolder]': {
 				afterrender: function(cmp) {
@@ -33,6 +35,7 @@ Ext.define('ExtSample.controller.ChessboardController', {
 										// piece.add(inSoldier);
 										// piece.remove(outSoldier)
 									}
+									me.fnStraightLineRule(cmp.itemId, piece.itemId);
 									cmp.remove(inSoldier);
 									piece.isActivated = 'no';
 									piece.setBodyStyle('border-radius', '0px');
@@ -60,11 +63,32 @@ Ext.define('ExtSample.controller.ChessboardController', {
 		}
 		return activatedPiece[0];
 	},
-	fnStraightLineRule : function(posA, posB){
-		var a1 = posA.subString(0,1);
-		var a2 = posA.subString(1,2);
-		var b1 = posB.subString(0,1);
-		var b2 = posB.subString(1,2);
-		
+	fnStraightLineRule: function(posA, posB) {
+		var a1 = posA.substring(0, 1);
+		var a2 = parseInt(posA.substring(1, 2));
+		/*var b1 = posB.substring(0, 1);
+		var b2 = parseInt(posB.substring(1, 2));*/
+		var numbers = this.numbers;
+		var alphas = this.alphas;
+		var possiblePositions = [];
+		for (var i = 0; i < 8; i++) {
+			var number = numbers[i];
+			if (number == a2)
+				continue;
+			else
+				possiblePositions.push(a1 + number);
+		};
+		for (var i = 0; i < 8; i++) {
+			var alpha = alphas[i];
+			if (alpha == a1)
+				continue;
+			else
+				possiblePositions.push(alpha + a2);
+		};
+		if(possiblePositions.indexOf(posB) != -1){
+			return true;
+		}
+		return false;
+
 	}
 });

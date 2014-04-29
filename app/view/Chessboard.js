@@ -13,15 +13,9 @@ Ext.define('ExtSample.view.Chessboard', {
 		var chessBoardPieces = 64;
 		var pieces = [];
 		var flag = true;
-		var x_index;
+		var x_index = 'a';
 		var y_index = 0;
 		for (var i = 0; i < chessBoardPieces; i++) {
-			if (x_index) {
-				x_index = String.fromCharCode(x_index.charCodeAt() + 1);
-			} else {
-				x_index = 'a';
-			}
-			y_index = parseInt(y_index/8) + 1;
 			var piece;
 			var a = (i % 8) * 80;
 			var b = parseInt(i / 8) * 80;
@@ -85,6 +79,10 @@ Ext.define('ExtSample.view.Chessboard', {
 					});
 				}
 			}
+			x_index = String.fromCharCode(x_index.charCodeAt() + 1);
+			if (parseInt(i % 8) == 0)
+				x_index = 'a';
+			y_index = parseInt(i / 8) + 1;
 			pieces.push(piece);
 
 		};
@@ -107,35 +105,35 @@ Ext.define('ExtSample.view.Chessboard', {
 			if (i < 8) {
 				if (i == 7 || i == 0) {
 					soldier = this.fnCreatePiece('whiteRook');
-					
+
 
 				} else if (i == 5 || i == 2) {
 					soldier = this.fnCreatePiece('whiteBishop');
-					
+
 				} else if (i == 6 || i == 1) {
 					soldier = this.fnCreatePiece('whiteKnight');
-					
+
 				} else if (i == 4) {
 					soldier = this.fnCreatePiece('whiteQueen');
-					
+
 				} else {
 					soldier = this.fnCreatePiece('whiteKing');
-					
+
 				}
 			} else if (i >= 8 && i < 16) {
 				soldier = this.fnCreatePiece('whitePawn');
-				
+
 			} else if (i >= 48 && i < 56) {
 				soldier = this.fnCreatePiece('blackPawn');
-				
+
 			} else if (i >= 56 && i < 64) {
 				if (i == 63 || i == 56) {
 					soldier = this.fnCreatePiece('blackRook');
-					
+
 
 				} else if (i == 61 || i == 58) {
 					soldier = this.fnCreatePiece('blackBishop');
-					
+
 				} else if (i == 62 || i == 57) {
 					soldier = this.fnCreatePiece('blackKnight');
 
