@@ -21,6 +21,7 @@ Ext.define('ExtSample.controller.ChessboardController', {
 
 					var elt = cmp.getEl();
 					elt.on('click', function() {
+						console.log(cmp.itemId);
 						var piece = me.fnClickHistory();
 						if (piece) {
 							if (cmp.itemId == piece.itemId) {
@@ -35,7 +36,7 @@ Ext.define('ExtSample.controller.ChessboardController', {
 										// piece.add(inSoldier);
 										// piece.remove(outSoldier)
 									}
-									me.fnStraightLineRule(cmp.itemId, piece.itemId);
+									me.fnCrossLineRule(cmp.itemId, piece.itemId);
 									cmp.remove(inSoldier);
 									piece.isActivated = 'no';
 									piece.setBodyStyle('border-radius', '0px');
@@ -85,10 +86,40 @@ Ext.define('ExtSample.controller.ChessboardController', {
 			else
 				possiblePositions.push(alpha + a2);
 		};
-		if(possiblePositions.indexOf(posB) != -1){
+		if (possiblePositions.indexOf(posB) != -1) {
 			return true;
 		}
 		return false;
+
+	},
+	fnCrossLineRule: function(posA, posB) {
+		var a1 = posA.substring(0, 1);
+		var a2 = parseInt(posA.substring(1, 2));
+		/*var b1 = posB.substring(0, 1);
+		var b2 = parseInt(posB.substring(1, 2));*/
+		var numbers = this.numbers;
+		var alphas = this.alphas;
+		var possiblePositions = [];
+
+		var x_index = alphas.indexOf(a1);
+		var pointer = 1;
+		for (var i = x_index + 1; i < 8; i++) {
+			var alpha = alphas[i];
+			if ((a2 + pointer) <= 8)
+				possiblePositions.push(alpha + (a2 + pointer));
+			if ((a2 + pointer) > 0)
+				possiblePositions.push(alpha + (a2 - pointer));
+			pointer++;
+		};
+		pointer = 1;
+		for (var i = x_index - 1; i >= 0; i--) {
+			var alpha = alphas[i];
+			if ((a2 + pointer) <= 8)
+				possiblePositions.push(alpha + (a2 + pointer));
+			if ((a2 + pointer) > 0)
+				possiblePositions.push(alpha + (a2 - pointer));
+			pointer++;
+		};
 
 	}
 });

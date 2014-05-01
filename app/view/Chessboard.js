@@ -14,7 +14,7 @@ Ext.define('ExtSample.view.Chessboard', {
 		var pieces = [];
 		var flag = true;
 		var x_index = 'a';
-		var y_index = 0;
+		var y_index = 1;
 		for (var i = 0; i < chessBoardPieces; i++) {
 			var piece;
 			var a = (i % 8) * 80;
@@ -80,7 +80,7 @@ Ext.define('ExtSample.view.Chessboard', {
 				}
 			}
 			x_index = String.fromCharCode(x_index.charCodeAt() + 1);
-			if (parseInt(i % 8) == 0)
+			if (parseInt( (i+1) % 8) == 0)
 				x_index = 'a';
 			y_index = parseInt(i / 8) + 1;
 			pieces.push(piece);
