@@ -36,7 +36,7 @@ Ext.define('ExtSample.controller.ChessboardController', {
 										// piece.add(inSoldier);
 										// piece.remove(outSoldier)
 									}
-									me.fnCrossLineRule(cmp.itemId, piece.itemId);
+									me.fnCrossLineRule(piece.itemId, cmp.itemId);
 									cmp.remove(inSoldier);
 									piece.isActivated = 'no';
 									piece.setBodyStyle('border-radius', '0px');
@@ -121,5 +121,8 @@ Ext.define('ExtSample.controller.ChessboardController', {
 			pointer++;
 		};
 
+		if(possiblePositions.indexOf(posB) != -1)
+			return true;
+		return false;
 	}
 });
