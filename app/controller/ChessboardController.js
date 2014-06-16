@@ -36,7 +36,7 @@ Ext.define('ExtSample.controller.ChessboardController', {
 										// piece.add(inSoldier);
 										// piece.remove(outSoldier)
 									}
-									me.fnCrossLineRule(piece.itemId, cmp.itemId);
+									me.fnKnightRule(piece.itemId, cmp.itemId);
 									cmp.remove(inSoldier);
 									piece.isActivated = 'no';
 									piece.setBodyStyle('border-radius', '0px');
@@ -121,8 +121,40 @@ Ext.define('ExtSample.controller.ChessboardController', {
 			pointer++;
 		};
 
-		if(possiblePositions.indexOf(posB) != -1)
+		if (possiblePositions.indexOf(posB) != -1)
 			return true;
 		return false;
+	},
+	fnKnightRule: function(posA, posB) {
+		var a1 = posA.substring(0, 1);
+		var a2 = parseInt(posA.substring(1, 2));
+		/*var b1 = posB.substring(0, 1);
+		var b2 = parseInt(posB.substring(1, 2));*/
+		var numbers = this.numbers;
+		var alphas = this.alphas;
+		var possiblePositions = [];
+
+
+		if (alphas.indexOf(a1) < 6) {
+			var pos = String.fromCharCode(a1.charCodeAt() + 2);
+			possiblePositions.push(pos + (a2 + 1));
+			possiblePositions.push(posfs + (a2 - 1));
+		}
+		if (alphas.indexOf(a1) < 2) {
+			var pos = String.fromCharCode(a1.charCodeAt() - 2);
+			possiblePositions.push(pos + (a2 + 1));
+			possiblePositions.push(posfs + (a2 - 1));
+		}
+		if (alphas.indexOf(a1) == 6) {
+			var pos = String.fromCharCode(a1.charCodeAt() + 1);
+			possiblePositions.push(pos + (a2 + 2));
+			possiblePositions.push(posfs + (a2 - 2));
+		}
+		if (alphas.indexOf(a1) == 2) {
+			var pos = String.fromCharCode(a1.charCodeAt() - 1);
+			possiblePositions.push(pos + (a2 + 2));
+			possiblePositions.push(posfs + (a2 - 2));
+		}
+		debugger;
 	}
 });
