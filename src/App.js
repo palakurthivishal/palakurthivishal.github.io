@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { ProfileProvider } from './components/ProfileProvider';
+import NavMenu from './components/NavMenu';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import Bio from './navigation/Bio';
+import Contact from './navigation/Contact';
+import Skills from './navigation/Skills';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ProfileProvider>
+        <Router basename={process.env.PUBLIC_URL}>
+          <NavMenu />
+          <div style={{ marginTop: '50px' }}>
+            <Route path={'/bio'} component={Bio} />
+            <Route path={'/contact'} component={Contact} />
+            <Route path={'/skills'} component={Skills} />
+          </div>
+        </Router>
+      </ProfileProvider>
     </div>
   );
 }
