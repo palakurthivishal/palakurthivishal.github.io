@@ -52,6 +52,7 @@ export default function Contact() {
   const { contact } = useContext(ProfileContext);
   return (
     <Container>
+      <p style={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '32px', fontStyle: 'italic' }}>Reach me at,</p>
       <SocialContainer>
         <a target="_blank" href={contact.socialMedia.linkedin.url}>
           <SocialIcon src={contact.socialMedia.linkedin.logo} />
@@ -64,7 +65,7 @@ export default function Contact() {
         </a>
       </SocialContainer>
 
-      <p style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '48px', fontStyle: 'italic' }}>
+      <p style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '96px', fontStyle: 'italic' }}>
         If you live on a different planet,
       </p>
 
@@ -81,7 +82,7 @@ export default function Contact() {
         <textarea rows="3" />
       </Field>
       <div style={{ textAlign: 'center' }}>
-        <Button>Send</Button>
+        <Button>Work in progress...</Button>
       </div>
     </Container>
   );

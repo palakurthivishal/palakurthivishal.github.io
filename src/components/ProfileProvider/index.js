@@ -1,11 +1,23 @@
 import React from 'react';
 
+/**
+ * 
+import avatar from '../../img/avatar.png';
+
+import dbs from '../../img/dbs.png';
+import innominds from '../../img/innominds.png';
+
+import linkedin from '../../img/linkedIn.png';
+import facebook from '../../img/facebook.png';
+import twitter from '../../img/twitter.png';
+ */
+
 const data = {
   bio: {
     avatar: 'https://cdn2.f-cdn.com/contestentries/1316431/24595406/5ae8a3f2e4e98_thumb900.jpg',
     name: 'Vishal Goud Palakurthi',
     role: 'UI Engineer',
-    intro: `Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book`
+    intro: `Predominantly, I'm a Web User Interface engineer who codes in HTML/CSS/JS but in my leisure I step out to see which direction the world is heading. I enjoy programming as long as there is a problem to solve. I enjoy building the interfaces due to it's intricacies and also because it is the first thing the customer interacts with.`
   },
   skills: {
     web: [
@@ -26,7 +38,17 @@ const data = {
   work: {
     orgs: [
       {
-        name: 'Innominds Software SEZ India Pvt Ltd'
+        name: 'DBS Asia Hub2 Private Limited',
+        logo: 'https://2237ol4ablev3zf0ke2f1083-wpengine.netdna-ssl.com/wp-content/uploads/2017/12/dbs-logo.png',
+        location: 'Hyderabad, India',
+        duration: 'August 2017 - Present'
+      },
+      {
+        name: 'Innominds Software SEZ India Pvt Ltd',
+        logo:
+          'https://lh3.googleusercontent.com/proxy/4PlG6Nc6CnVdbIydr9u3T4an8LPfHpaDB_ND4UtZrT0LIGmf5VX0ck9y9P1ZegKrH-pp4o8X2wQaACTJUCJCG0g0sFX0cjni',
+        location: 'Hyderabad, India',
+        duration: 'November 2012 - August 2017'
       }
     ]
   },
@@ -36,15 +58,15 @@ const data = {
     socialMedia: {
       linkedin: {
         logo: 'https://pngimg.com/uploads/linkedIn/linkedIn_PNG27.png',
-        url: ''
+        url: 'https://www.linkedin.com/in/vishal-palakurthi-24704b82/'
       },
       facebook: {
         logo: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png',
-        url: ''
+        url: 'http://facebook.com/2340309439363480'
       },
       twitter: {
         logo: 'https://pngimg.com/uploads/twitter/twitter_PNG9.png',
-        url: ''
+        url: 'https://twitter.com/shhh_vishh'
       }
     }
   }
