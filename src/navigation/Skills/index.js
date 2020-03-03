@@ -23,7 +23,7 @@ export default function Skills(props) {
         width={400}
         height={400}
         padding={0} // optional value, number that set the padding between bubbles
-        showLegend={true} // optional value, pass false to disable the legend.
+        showLegend={false} // optional value, pass false to disable the legend.
         legendPercentage={20} // number that represent the % of with that legend going to use.
         legendFont={{
           family: 'Arial',

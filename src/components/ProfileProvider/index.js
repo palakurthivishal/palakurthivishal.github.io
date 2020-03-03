@@ -17,7 +17,7 @@ const data = {
     avatar: 'https://cdn2.f-cdn.com/contestentries/1316431/24595406/5ae8a3f2e4e98_thumb900.jpg',
     name: 'Vishal Goud Palakurthi',
     role: 'UI Engineer',
-    intro: `Predominantly, I'm a Web User Interface engineer who codes in HTML/CSS/JS but in my leisure I step out to see which direction the world is heading. I enjoy programming as long as there is a problem to solve. I enjoy building the interfaces due to it's intricacies and also because it is the first thing the customer interacts with.`
+    intro: `Predominantly, I'm a Web User Interface engineer who codes in HTML/CSS/JS but in my leisure I step out to see which direction the world is heading. I enjoy programming as long as there is a problem to solve. I enjoy building interfaces due to it's intricacies and also because it is the first thing the customer interacts with.`
   },
   skills: {
     web: [
@@ -45,8 +45,7 @@ const data = {
       },
       {
         name: 'Innominds Software SEZ India Pvt Ltd',
-        logo:
-          'https://lh3.googleusercontent.com/proxy/4PlG6Nc6CnVdbIydr9u3T4an8LPfHpaDB_ND4UtZrT0LIGmf5VX0ck9y9P1ZegKrH-pp4o8X2wQaACTJUCJCG0g0sFX0cjni',
+        logo: 'https://d3lkgw8fmky896.cloudfront.net/qan-logo-a154P000002LYzDQAW.png',
         location: 'Hyderabad, India',
         duration: 'November 2012 - August 2017'
       }

@@ -3,7 +3,6 @@ import ProfileContext from '../../components/ProfileProvider';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  max-width: 400px;
   margin: 0 auto;
   text-align: left;
 `;
@@ -41,11 +40,14 @@ const Button = styled.button`
 const SocialContainer = styled.div`
   margin: 16px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  a {
+    margin: 0 8px;
+  }
 `;
 
 const SocialIcon = styled.img`
-  max-height: 100px;
+  max-height: 80px;
 `;
 
 export default function Contact() {
@@ -65,7 +67,7 @@ export default function Contact() {
         </a>
       </SocialContainer>
 
-      <p style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '96px', fontStyle: 'italic' }}>
+      <p style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '72px', fontStyle: 'italic' }}>
         If you live on a different planet,
       </p>
 

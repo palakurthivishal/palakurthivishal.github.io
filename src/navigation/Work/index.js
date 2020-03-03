@@ -16,7 +16,7 @@ const Org = styled.div`
 `;
 
 const Logo = styled.img`
-  max-height: 80px;
+  max-height: 45px;
 `;
 
 const Italicized = styled.span`

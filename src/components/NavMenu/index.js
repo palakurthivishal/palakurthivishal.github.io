@@ -25,9 +25,10 @@ const MenuItem = styled.li`
     color: inherit;
     text-decoration: none;
   }
-
-  a.active,
   a:hover {
+    color: #4bd21f;
+  }
+  a.active {
     color: #4bd21f;
     border-bottom: 2px solid #4bd21f;
   }

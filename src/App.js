@@ -14,7 +14,7 @@ function App() {
       <ProfileProvider>
         <Router basename={process.env.PUBLIC_URL}>
           <NavMenu />
-          <div style={{ marginTop: '50px' }}>
+          <div style={{ maxWidth: '500px', margin: '0 auto', marginTop: '50px' }}>
             <Route exact path={'/'} render={() => <Redirect to="/bio" />} />
             <Route path={'/bio'} component={Bio} />
             <Route path={'/contact'} component={Contact} />
