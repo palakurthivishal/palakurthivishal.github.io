@@ -13,7 +13,7 @@ export default function Skills(props) {
   };
 
   return (
-    <div style={{ width: '400px', height: '400px', overflow: 'hidden' }}>
+    <div style={{ width: '400px', height: '600px' }}>
       <BubbleChart
         graph={{
           zoom: 1.1,
@@ -21,7 +21,7 @@ export default function Skills(props) {
           offsetY: -0.01
         }}
         width={400}
-        height={400}
+        height={600}
         padding={0} // optional value, number that set the padding between bubbles
         showLegend={false} // optional value, pass false to disable the legend.
         legendPercentage={20} // number that represent the % of with that legend going to use.
@@ -47,22 +47,15 @@ export default function Skills(props) {
         bubbleClickFunc={bubbleClick}
         legendClickFun={legendClick}
         data={[
-          { label: 'CRM', value: 1 },
-          { label: 'API', value: 1 },
-          { label: 'Data', value: 1 },
-          { label: 'Commerce', value: 1 },
-          { label: 'AI', value: 3 },
-          { label: 'Management', value: 5 },
-          { label: 'Testing', value: 6 },
-          { label: 'Mobile', value: 9 },
-          { label: 'Conversion', value: 9 },
-          { label: 'Misc', value: 21 },
-          { label: 'Databases', value: 22 },
-          { label: 'DevOps', value: 22 },
-          { label: 'Javascript', value: 23 },
-          { label: 'Languages / Frameworks', value: 25 },
-          { label: 'Front End', value: 26 },
-          { label: 'Content', value: 26 }
+          { label: 'HTML', value: 7 },
+          { label: 'CSS', value: 7 },
+          { label: 'JS', value: 7 },
+          { label: 'React', value: 2 },
+          { label: 'Angular JS', value: 3 },
+          { label: 'Java', value: 1 },
+          { label: 'Python', value: 1 },
+          { label: 'Typescript', value: 2 },
+          { label: 'ML', value: 1 }
         ]}
       />
     </div>
